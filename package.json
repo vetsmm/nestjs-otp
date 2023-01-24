@@ -1,0 +1,88 @@
+{
+  "name": "@vetsmm/nestjs-otp",
+  "version": "0.0.1",
+  "description": "NestJS module for One Time Passwords (OTP)",
+  "author": "Mark Tripoli <markt@vetsmm.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "nestjs",
+    "nest",
+    "otp"
+  ],
+  "homepage": "https://github.com/vetsmm/nestjs-otp#readme",
+  "bugs": {
+    "url": "https://github.com/vetsmm/nestjs-otp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vetsmm/nestjs-otp.git"
+  },
+  "files": [
+    "dist/**/*",
+    "*.md"
+  ],
+  "scripts": {
+    "start:dev": "tsc -w",
+    "build": "tsc -p tsconfig.build.json",
+    "format": "prettier --write \\\"lib/**/*.ts\\\"",
+    "lint": "eslint",
+    "test": "jest",
+    "rimraf": "./node_modules/rimraf/bin.js",
+    "prebuild": "rimraf dist/",
+    "prepublish": "npm run build",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "major": "npm run release -- --release-as major",
+    "minor": "npm run release -- --release-as minor",
+    "patch": "npm run release -- --release-as patch",
+    "release": "standard-version",
+    "deploy": "sh ./publish.sh"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -c .commitlintrc.json -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write"
+    ]
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^9.2.1"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-angular": "^17.4.2",
+    "@nestjs/common": "^9.2.1",
+    "@nestjs/core": "^9.2.1",
+    "@nestjs/platform-express": "9.2.1",
+    "@nestjs/testing": "9.2.1",
+    "@types/express": "^4.17.15",
+    "@types/jest": "^29.2.5",
+    "@types/node": "^18.11.18",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "5.48.1",
+    "@typescript-eslint/parser": "5.48.1",
+    "eslint": "^8.31.0",
+    "husky": "^8.0.3",
+    "jest": "^29.3.1",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.3",
+    "rimraf": "^3.0.2",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
+    "tsc-watch": "^5.0.3",
+    "tsconfig-paths": "^4.1.2",
+    "typescript": "^4.9.4"
+  }
+}

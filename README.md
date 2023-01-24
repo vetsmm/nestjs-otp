@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-🔑 One Time Password (OTP) / 2FA for Node.js and Browser - Supports HOTP, TOTP and Google Authenticator
+🔑 One Time Password (OTP) / 2FA for NestJS - Supports HOTP, TOTP and Google Authenticator
 </p>
 
 <p align="center">
